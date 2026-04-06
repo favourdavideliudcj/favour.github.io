@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Christ Evangelistic Church</title>
+<style>
+
+body{
+font-family: Arial;
+margin:0;
+background:#f4f4f4;
+}
+
+header{
+background:purple;
+color:white;
+text-align:center;
+padding:15px;
+}
+
+nav{
+background:#222;
+text-align:center;
+padding:12px;
+}
+
+nav a{
+color:white;
+margin:15px;
+text-decoration:none;
+font-size:18px;
+cursor:pointer;
+}
+
+nav a:hover{
+color:violet;
+}
+
+section{
+display:none;
+background:white;
+margin:20px;
+padding:20px;
+border-radius:10px;
+}
+
+.hero{
+background:#6a0dad;
+color:white;
+text-align:center;
+padding:80px 20px;
+}
+
+input, select{
+width:100%;
+padding:10px;
+margin:8px 0;
+}
+
+button{
+padding:10px 20px;
+background:purple;
+color:white;
+border:none;
+cursor:pointer;
+}
+.img{
+    border-radius: 12px;
+    width: 20px;
+}
+footer{
+background:blueviolet;
+color:white;
+text-align:center;
+padding:10px;
+}
+
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <audio controls>
+  <source src="Israel Mbonyi - Nina Siri(M4A_128K) - Copy.m4a" type="audio/mpeg">
+    </audio>
+    <img src="image.jpg">
+<h1>CHRIST'S EVANGELISTIC CHURCH HOMABAY BRANCH</h1>
+<p>Spreading the Gospel with Faith, Love and Hope</p>
+</header>
+
+<nav>
+<a onclick="showPage('home')">Home</a>
+<a onclick="showPage('about')">About</a>
+<a onclick="showPage('programs')">Programs</a>
+<a onclick="showPage('register')">Register</a>
+<a onclick="showPage('contact and location')">Contact and location</a>
+</nav>
+
+
+<div class="hero">
+<h2>Welcome to Christ Evangelistic Church,Homabay</h2>
+<p>A place of worship and spiritual growth</p>
+<p>THEME:Luke 6:38-Give and it will be given to you.A good measure, pressed down, shaken together and running ove, will be poured into your lap.For with the measure you use, it will be measured to you </p>
+</div>
+
+<h2>Sunday Services</h2>
+<p>Intercessory: 6 AM - 7:30 AM</p>
+<p>First Service: 7:30 AM - 8:30 AM</p>
+<p>Testimonies,Announcements,Praise and worship,Tithes and offerings respectively: 8:30 AM - 11:30 AM </p>
+<p>Second Service: 11:30 AM -12:30 PM</p>
+</section>
+
+<section id="about">
+
+<h2>About Our Church</h2>
+
+<p>
+Christ Evangelistic Church is dedicated to spreading the Gospel of Jesus Christ
+and helping people grow in faith, love and hope.
+</p>
+<p>Christ Evangelistic Church  formely knowns as AFCEA minsteries is a minstry that is in Kenya and Africa. In Kenya we have many branches including Homabay</p>
+<p>Our main pastors are Pastors Benard okumu and Judith Owili</p>
+<p>Come and join us every sunday to Fellowship together and praise the almighty GOD, may GOD bless you abudantly</p>
+</section>
+
+<section id="programs">
+
+<h2>Church Programs</h2>
+
+<ul>
+<li>Bible Study -Wednesday 6 PM</li>
+<li>Youth Fellowship – Friday 5 PM</li>
+<li>Praise and worship Practice – Saturday 4 PM</li>
+<li>Midweek Prayers-Thusday 7 AM-7 PM</li>
+</ul>
+
+</section>
+
+<section id="register">
+
+<h2>Member Registration</h2>
+
+<form id="memberForm">
+
+<input type="text" id="First Name" placeholder="First Name" required>
+<input type="text" id="Middle Name" placeholder="Middle Name" required>
+<input type="text" id="Last name" placeholder="Last Name" required>
+<input type="number" id="phone" placeholder="Phone Number" required>
+<input type="text" id="Email"   placeholder="Email" required>
+
+<select id="department">
+<option>Praise and worship</option>
+<option>Youth</option>
+<option>Ushering</option>
+<option>Media</option>
+<option>Sunday schools</option>
+<option>Teacher of the word</option>
+<option>Pastors</option>
+<option>Evangelists</option>
+<option>Bishops</option>
+<option>Reverends</option>
+</select>
+<button type="submit">Register</button>
+
+</form>
+
+<h3>Registered Members</h3>
+
+<ul id="memberList"></ul>
+
+</section>
+
+<section id="contact and location">
+
+<h2>Contact Us</h2>
+<p>Email: favourokumu@gmail.com</p>
+<p>Phone:0726794716</p> 
+<P>HOMABAY, OPPOSITE RAILA AMOLLO ODINGA, STADIUM(KENYA)</P>
+<P> P.o.BOX:687-40300</P> 
+<footer>
+    <P>YOU ARE WELCOME TO OUR CHURCH. MAY THE ALMIGHTY GOD BLESS YOU</P>
+<p>© 2026 Christ Evangelistic Church</p>
+<p>Made by software engineer.Engineer Favour David Eliud</p>
+</footer>
+
+<script>
+
+function showPage(page){
+
+let sections = document.querySelectorAll("section");
+
+sections.forEach(section => {
+section.style.display="none";
+});
+
+document.getElementById(page).style.display="block";
+
+}
+
+const form = document.getElementById("memberForm");
+const memberList = document.getElementById("memberList");
+
+form.addEventListener("submit", function(e){
+
+e.preventDefault();
+
+const name = document.getElementById("name").value;
+const phone = document.getElementById("phone").value;
+const department = document.getElementById("department").value;
+
+const li = document.createElement("li");
+
+li.textContent = name + " - " + phone + " (" + department + ")";
+
+memberList.appendChild(li);
+
+form.reset();
+
+});
+
+</script>
+</body>
+</html>
